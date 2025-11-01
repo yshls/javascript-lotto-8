@@ -18,4 +18,8 @@ export const UserOutput = {
       Console.print(`[${lotto.getSortedNumbers().join(', ')}]`);
     });
   },
+
+  promptWinningNumbers() {
+    Console.print('\n당첨 번호를 입력해 주세요.');
+  },
 };

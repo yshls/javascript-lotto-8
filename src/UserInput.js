@@ -5,4 +5,9 @@ export const UserInput = {
     const input = await Console.readLineAsync('');
     return input;
   },
+
+  async readWinningNumbers() {
+    const input = await Console.readLineAsync('');
+    return input;
+  },
 };
