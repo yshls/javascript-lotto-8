@@ -39,4 +39,7 @@ export const UserOutput = {
     Console.print(`5개 일치, 보너스 볼 일치 (30,000,000원) - ${stats[2]}개`);
     Console.print(`6개 일치 (2,000,000,000원) - ${stats[1]}개`);
   },
+  printProfitRate(profitRate) {
+    Console.print(`총 수익률은 ${profitRate}%입니다.`);
+  },
 };

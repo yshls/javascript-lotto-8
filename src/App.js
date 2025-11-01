@@ -35,6 +35,12 @@ class App {
 
     UserOutput.printStatisticsHeader();
     UserOutput.printStatistics(stats);
+
+    const profitRate = calculator.calculateProfitRate(
+      stats,
+      this.#purchaseAmount
+    );
+    UserOutput.printProfitRate(profitRate);
   }
 
   async #getPurchaseAmount() {

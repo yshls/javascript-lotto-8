@@ -43,6 +43,24 @@ class LottoCalculator {
 
     return stats;
   }
+
+  calculateProfitRate(stats, purchaseAmount) {
+    const PRIZES = {
+      1: 2_000_000_000,
+      2: 30_000_000,
+      3: 1_500_000,
+      4: 50_000,
+      5: 5_000,
+    };
+
+    const totalRevenue = Object.entries(stats).reduce((sum, [rank, count]) => {
+      return sum + PRIZES[rank] * count;
+    }, 0);
+
+    const profitRate = (totalRevenue / purchaseAmount) * 100;
+
+    return Math.round(profitRate * 10) / 10;
+  }
 }
 
 export default LottoCalculator;
