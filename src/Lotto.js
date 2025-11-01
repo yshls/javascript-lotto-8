@@ -16,6 +16,10 @@ class Lotto {
       throw new Error('[ERROR] 로또 번호는 중복될 수 없습니다.');
     }
   }
+
+  getSortedNumbers() {
+    return [...this.#numbers].sort((a, b) => a - b);
+  }
 }
 
 export default Lotto;
