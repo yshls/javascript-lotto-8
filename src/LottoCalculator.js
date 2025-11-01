@@ -30,6 +30,19 @@ class LottoCalculator {
     }
     return null;
   }
+
+  calculateStatistics(lottos) {
+    const stats = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+
+    lottos.forEach((lotto) => {
+      const rank = this.calculateRank(lotto);
+      if (rank) {
+        stats[rank]++;
+      }
+    });
+
+    return stats;
+  }
 }
 
 export default LottoCalculator;

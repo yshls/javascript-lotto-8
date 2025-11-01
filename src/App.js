@@ -7,6 +7,7 @@ import {
 } from './Validator.js';
 import { MissionUtils } from '@woowacourse/mission-utils';
 import Lotto from './Lotto.js';
+import LottoCalculator from './LottoCalculator.js';
 
 class App {
   #purchaseAmount;
@@ -25,6 +26,15 @@ class App {
     await this.#getWinningNumbers();
 
     await this.#getBonusNumber();
+
+    const calculator = new LottoCalculator(
+      this.#winningNumbers,
+      this.#bonusNumber
+    );
+    const stats = calculator.calculateStatistics(this.#lottos);
+
+    UserOutput.printStatisticsHeader();
+    UserOutput.printStatistics(stats);
   }
 
   async #getPurchaseAmount() {
