@@ -1,6 +1,7 @@
 import {
   validatePurchaseAmount,
   validateWinningNumbers,
+  validateBonusNumber,
 } from '../src/Validator.js';
 
 describe('구입 금액 검증 테스트', () => {
@@ -64,5 +65,33 @@ describe('당첨 번호 검증 테스트', () => {
     expect(() => {
       validateWinningNumbers('1,2,3,4,5,6');
     }).not.toThrow();
+  });
+
+  describe('보너스 번호 검증 테스트', () => {
+    const winningNumbers = [1, 2, 3, 4, 5, 6];
+
+    test('숫자가 아니면 에러가 발생한다.', () => {
+      expect(() => {
+        validateBonusNumber('a', winningNumbers);
+      }).toThrow('[ERROR]');
+    });
+
+    test('1~45 범위를 벗어나면 에러가 발생한다.', () => {
+      expect(() => {
+        validateBonusNumber('46', winningNumbers);
+      }).toThrow('[ERROR]');
+    });
+
+    test('이미 입력된 당첨 번호와 중복되면 에러가 발생한다.', () => {
+      expect(() => {
+        validateBonusNumber('6', winningNumbers);
+      }).toThrow('[ERROR]');
+    });
+
+    test('유효한 보너스 번호는 에러가 발생하지 않는다.', () => {
+      expect(() => {
+        validateBonusNumber('7', winningNumbers);
+      }).not.toThrow();
+    });
   });
 });
