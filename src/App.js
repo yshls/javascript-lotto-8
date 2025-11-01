@@ -7,6 +7,8 @@ class App {
 
   async run() {
     await this.#getPurchaseAmount();
+    const lottoCount = this.#purchaseAmount / 1000;
+    UserOutput.printLottoCount(lottoCount);
   }
 
   async #getPurchaseAmount() {

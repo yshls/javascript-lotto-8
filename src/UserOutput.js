@@ -8,4 +8,8 @@ export const UserOutput = {
   printError(message) {
     Console.print(message);
   },
+
+  printLottoCount(count) {
+    Console.print(`\n${count}개를 구매했습니다.`);
+  },
 };
