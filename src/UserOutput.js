@@ -22,4 +22,8 @@ export const UserOutput = {
   promptWinningNumbers() {
     Console.print('\n당첨 번호를 입력해 주세요.');
   },
+
+  promptBonusNumber() {
+    Console.print('\n보너스 번호를 입력해 주세요.');
+  },
 };

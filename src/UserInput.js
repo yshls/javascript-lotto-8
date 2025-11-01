@@ -10,4 +10,9 @@ export const UserInput = {
     const input = await Console.readLineAsync('');
     return input;
   },
+
+  async readBonusNumber() {
+    const input = await Console.readLineAsync('');
+    return input;
+  },
 };
